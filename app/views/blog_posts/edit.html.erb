@@ -1,0 +1,16 @@
+<div class="card mt-4">
+
+  <div class="card-header">
+    <div class="d-flex justify-content-between align-items-center">
+      <span>Update Blog Post</span>
+      <%= button_to "Delete", blog_post_path, method: :delete, data: {turbo_confirm: "Are you sure?"}, class: 'btn btn-danger'%>
+    </div>
+  </div>
+
+  <div class="card-body">
+
+    <%= render partial: 'form', locals: {blog_post: @blog_post} %>
+
+  </div>
+
+</div>

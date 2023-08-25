@@ -1,0 +1,13 @@
+<div class="card mt-4">
+  <div class="card-header">
+    <%= @blog_post.title %>
+  </div>
+  <div class="card-body">
+    <%= @blog_post.content %>
+  </div>
+</div>
+
+<div class="mt-3">
+  <%= link_to "Edit", edit_blog_post_path, class: 'btn btn-secondary' %>
+  <%= link_to "Show all posts", blog_posts_path, class: 'btn btn-secondary' %>
+</div>

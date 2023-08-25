@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Phaniraj's Blogs</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <%= link_to "Home", root_path, class: "nav-link"  %>
+        <%= link_to "Create New Blog", new_blog_post_path, class: "nav-link" if user_signed_in?%>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <%= button_to "Logout", destroy_user_session_path, method: :delete ,class: "nav-link" if user_signed_in?%>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" unless user_signed_in?%>
+      </div>
+    </div>
+  </div>
+</nav>

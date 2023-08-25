@@ -1,0 +1,26 @@
+<div class="card mt-4">
+  <div class="card-header">
+    Featured Blogs
+  </div>
+  <ul class="list-group list-group-flush">
+    <% @blog_posts.each do |blog_post| %>
+      <li class="list-group-item">
+        <div class="d-flex flex-column ">
+          <%= link_to blog_post.title, blog_post_path(blog_post.id)%>
+          <span class="text-muted">
+            <small>
+              <em>
+                <%= blog_post.published_date %>
+              </em>
+            </small>
+          </span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="mt-4 mb-4">
+  <%#== pagy_nav(@pagy) if @pagy.pages > 1 %>
+  <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+</div>

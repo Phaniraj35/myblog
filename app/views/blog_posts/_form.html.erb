@@ -1,0 +1,32 @@
+<%= form_with model: blog_post do |form| %>
+  <ul>
+    <% if form.object.errors.any? %>
+
+      <% form.object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+
+    <% end %>
+  </ul>
+
+  <div class="mb-3">
+    <%= form.label :title %>
+    <%=
+      form.text_field :title, class: "form-control"
+    %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :content %>
+    <%= form.rich_text_area :content, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :published_at %> <br>
+    <%= form.datetime_select  :published_at, { include_blank: true }, { class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"} %>
+  </div>
+
+  <div>
+    <%= form.button class: "btn btn-secondary" %>
+  </div>
+<% end %>
